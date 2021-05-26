@@ -25,4 +25,16 @@ body, html{
     background-color: color(secondary);        
     z-index: 1;
   }
+
+  .navbar{
+    .navbar-name{
+        color: color(primary); 
+    }
+    .navbar-icons{
+      &:hover{
+        color: color(secondary);
+        background-color: color(secondary_light); 
+      }
+    }
+  }     
 }
