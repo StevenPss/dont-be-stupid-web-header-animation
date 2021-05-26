@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Archivo+Black&display=swap');
+
+$colors: (
+    primary: lighten(#060306, 5),
+    secondary: lighten(#fa9f25, 10),
+    secondary_light: lighten(rgba(250,159,37, 0.3), 30),
+    accent: lighten(#e55013, 5),
+    accent_secondary: #ffffff,
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+body, html{
+  background-color: color(primary);
+  font-family: 'Montserrat';
+  color: color(primary);
+}
+
+.app {
+  #bg {
+    height: 110vh;
+    clip-path: inset(0 25% 0 0);
+    background-color: color(secondary);        
+    z-index: 1;
+  }
+}
