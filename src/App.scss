@@ -12,10 +12,27 @@ $colors: (
     @return map-get($colors, $color-name);
 }
 
+$desktop: 640px;
+
+@mixin desktop-sm {
+    @media (max-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+      @content;
+  }
+}
+
 body, html{
   background-color: color(primary);
   font-family: 'Montserrat';
   color: color(primary);
+  @include desktop-sm {
+    background-color: color(secondary);
+  }
 }
 
 .app {
@@ -24,6 +41,9 @@ body, html{
     clip-path: inset(0 25% 0 0);
     background-color: color(secondary);        
     z-index: 1;
+    @include desktop-sm {
+      clip-path: inset(0 0% 0 0);
+    }
   }
 
   .navbar{
@@ -36,5 +56,38 @@ body, html{
         background-color: color(secondary_light); 
       }
     }
-  }     
+  }
+  
+  .main{
+    .main-content{
+      .main-header{
+        .main-text{
+          h1{
+            font-family: 'Archivo Black';
+          }
+        }
+        .main-product-price{
+          font-family: 'Archivo Black';
+        }
+        .main-cta{
+          &:hover{
+            color: color(secondary);
+            background-color: color(primary); 
+            transition: all .1s ease-in-out;
+          }
+        }
+      }
+      .main-model{
+        @include desktop-sm {
+          clip-path: circle(45% at 50% 50%);
+          background-color: color(accent);
+        }
+        @include desktop {
+          background-color: color(accent);
+        }
+      }
+      
+      
+    }
+  }
 }
