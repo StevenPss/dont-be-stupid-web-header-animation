@@ -50,6 +50,10 @@ body, html{
     .navbar-name{
         color: color(primary); 
     }
+    .active{
+      color: color(secondary);
+      background-color: color(secondary_light); 
+    }
     .navbar-icons{
       &:hover{
         color: color(secondary);
@@ -87,6 +91,10 @@ body, html{
         }
       }
       .main-socials{
+        .active{
+          background-color: color(accent);
+          color: color(accent_secondary);
+        }
         a{
           &:hover{
             background-color: color(accent);
@@ -108,6 +116,14 @@ body, html{
         }
       }
       
+    }
+  }
+}
+.footer{
+  a{
+    &:hover{
+      color: color(accent);
+      transition: all .2s ease-out;
     }
   }
 }

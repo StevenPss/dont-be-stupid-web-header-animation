@@ -17,7 +17,7 @@ function Navbar() {
                         <div className="block sm:ml-6">
                             <div className="flex space-x-4 navbar-links">
                                 <a href="#home" className="text-white navbar-icons px-2 py-2 rounded-full text-2xl font-medium" aria-current="page"><BiUser/></a>
-                                <a href="#shop" className="text-white navbar-icons px-2 py-2 rounded-full text-2xl font-medium"><BiShoppingBag/></a>
+                                <a href="#shop" className="text-white navbar-icons px-2 py-2 rounded-full text-2xl font-medium active"><BiShoppingBag/></a>
                             </div>
                         </div>
                     </div>
