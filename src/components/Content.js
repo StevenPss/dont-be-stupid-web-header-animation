@@ -1,6 +1,8 @@
 import React from 'react'
 import Model from '../static/model.png'
 import { BiCaretRight } from 'react-icons/bi';
+import Socials from './Socials';
+import Slider from './Slider';
 
 
 function Content() {
@@ -48,7 +50,10 @@ function Content() {
                 </div>
             </div>
             {/** Socials and Slider*/}
-                          
+            <div className="flex justify-between mt-10 mb-10">
+                <Socials/>
+                <Slider/>
+            </div>   
         </div>
     )
 }
