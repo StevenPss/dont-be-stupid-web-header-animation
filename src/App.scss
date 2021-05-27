@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Archivo+Black&display=swap');
+
+$colors: (
+    primary: lighten(#060306, 5),
+    secondary: lighten(#fa9f25, 10),
+    secondary_light: lighten(rgba(250,159,37, 0.3), 30),
+    accent: lighten(#e55013, 5),
+    accent_secondary: #ffffff,
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+$desktop: 640px;
+
+@mixin desktop-sm {
+    @media (max-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+      @content;
+  }
+}
+
+body, html{
+  background-color: color(primary);
+  font-family: 'Montserrat';
+  color: color(primary);
+  @include desktop-sm {
+    background-color: color(secondary);
+  }
+}
+
+.app {
+  #bg {
+    height: 110vh;
+    clip-path: inset(0 25% 0 0);
+    background-color: color(secondary);        
+    z-index: 1;
+    @include desktop-sm {
+      clip-path: inset(0 0% 0 0);
+    }
+  }
+
+  .navbar{
+    .navbar-name{
+        color: color(primary); 
+    }
+    .active{
+      color: color(secondary);
+      background-color: color(secondary_light); 
+    }
+    .navbar-icons{
+      &:hover{
+        color: color(secondary);
+        background-color: color(secondary_light); 
+      }
+    }
+  }
+  
+  .main{
+    .main-content{
+      .main-header{
+        .main-text{
+          h1{
+            font-family: 'Archivo Black';
+            line-height: 5.5rem;
+          }
+        }
+        .main-product-price{
+          font-family: 'Archivo Black';
+        }
+        .main-cta{
+          &:hover{
+            color: color(secondary);
+            background-color: color(primary); 
+            transition: all .1s ease-in-out;
+          }
+        }
+      }
+      .main-model{
+        @include desktop-sm {
+          clip-path: circle(45% at 50% 50%);
+          background-color: color(accent);
+        }
+        @include desktop {
+          background-color: color(accent);
+        }
+      }
+      .main-socials{
+        .active{
+          background-color: color(accent);
+          color: color(accent_secondary);
+        }
+        a{
+          &:hover{
+            background-color: color(accent);
+            color: color(accent_secondary);
+            transition: all .2s ease-out;
+          }
+        }
+      }
+      .main-slider{
+        .active{
+          color: color(accent);
+        }
+        a{
+          &:hover{
+            background-color: color(accent_secondary);
+            color: color(accent);
+            transition: all .2s ease-out;
+          }
+        }
+      }
+      
+    }
+  }
+}
+.footer{
+  a{
+    &:hover{
+      color: color(accent);
+      transition: all .2s ease-out;
+    }
+  }
+}
