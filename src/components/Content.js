@@ -15,7 +15,7 @@ function Content() {
 
                 {/**Model */}  
                 <div className="main-model px-10 mt-3 sm:order-2">
-                    <img className="w-52 sm:w-72" src={Model} alt="model image"/>
+                    <img className="w-52 sm:w-72" src={Model} alt="model"/>
                 </div>              
                 
                 {/**Text, product, price & CTA */}
