@@ -22,8 +22,8 @@ function Content() {
                 <div className="main-header flex flex-col sm:order-1">
                     {/**Text*/}
                     <div className="main-text">
-                        <h1 className="text-7xl sm:text-8xl tracking-wider font-extrabold">
-                            <span className="text-sm tracking-normal font-normal">don't</span><br/>
+                        <span className="text-sm tracking-normal font-bold ml-2">don't</span><br/>
+                        <h1 className="text-7xl sm:text-8xl tracking-widest font-extrabold">
                             <span>Be</span><br/>
                             <span>Stupid!</span>
                         </h1>
